@@ -48,8 +48,8 @@ input {
   height: 30px;
 }
 #menu-header {
-  justify-content: space-around;
   display: flex;
+  align-items: center;
   color: #ffffff;
   background-color: #000000;
   padding-right: 60vw;
@@ -59,7 +59,7 @@ input {
   background-color: #f0f0f0bf;
   color: #000000;
   transition-duration: 0.5s;
-
+  height: 100%;
 }
 
 .menu-item {
