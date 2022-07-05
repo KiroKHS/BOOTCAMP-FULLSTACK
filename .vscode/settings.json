@@ -1,0 +1,21 @@
+{
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "workbench.iconTheme": "material-icon-theme",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "tabnine.experimentalAutoImports": true,
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "terminal.integrated.fontSize": 11,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.side": "left",
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#1A3415",
+    "titleBar.activeBackground": "#24481E",
+    "titleBar.activeForeground": "#F7FCF7"
+  }
+}
