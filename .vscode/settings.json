@@ -20,7 +20,7 @@
   "editor.guides.bracketPairs": "active",
   //formato html
   "[html]": {
-      "editor.defaultFormatter": "mblode.pretty-formatter"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
       "editor.defaultFormatter": "mblode.pretty-formatter"
