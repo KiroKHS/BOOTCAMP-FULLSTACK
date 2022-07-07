@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'django.contrib.humanize' #agregar un 'toque humano' a los datos ejempl 1000 -> 1,000
 ]
 
 MIDDLEWARE = [

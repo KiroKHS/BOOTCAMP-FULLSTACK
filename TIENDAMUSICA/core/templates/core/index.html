@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -92,7 +93,7 @@
               <img src="{{ iteam.imagen.url }}" alt="{{ iteam.cateogria}}" />
               <h3>{{iteam.nombre}}</h3>
               <p>{{iteam.descripcion}}</p>
-              <h3>{{iteam.precio}}</h3>
+              <h3>&dollar;{{iteam.precio  | intcomma }}</h3>
               <button>Agregar al carro</button>
             </div>
           {% endfor %}
