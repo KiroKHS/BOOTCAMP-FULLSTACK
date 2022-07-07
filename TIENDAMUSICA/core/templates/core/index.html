@@ -89,7 +89,7 @@
         <div id="productos">
           {% for iteam in productos%}
             <div class="producto">
-              <img src="{{ iteam.imagen }}" alt="piano" />
+              <img src="{{ iteam.imagen.url }}" alt="{{ iteam.cateogria}}" />
               <h3>{{iteam.nombre}}</h3>
               <p>{{iteam.descripcion}}</p>
               <h3>{{iteam.precio}}</h3>
