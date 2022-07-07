@@ -1,3 +1,13 @@
 from django.db import models
 
-# Create your models here.
+#data table Categoria 
+class Categoria(models.Model):
+  nombreCategoria = models.CharField(max_length=20)
+
+#data table Producto 
+class Producto(models.Model):
+  nombre = models.CharField(max_length=40)
+  descripcion = models.CharField(max_length=100)
+  precio = models.IntegerField()
+  imagen = models.ImageField(upload_to = "core/images")
+  cateogria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
