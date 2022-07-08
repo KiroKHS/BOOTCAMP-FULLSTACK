@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'django.contrib.humanize' #agregar un 'toque humano' a los datos ejempl 1000 -> 1,000
+    'django.contrib.humanize', #agregar un 'toque humano' a los datos ejempl 1000 -> 1,000
+    'crispy_forms'
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -106,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -126,3 +129,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#para que redirecione a home al inicar con el login
+LOGIN_REDIRECT_URL = 'home'
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
