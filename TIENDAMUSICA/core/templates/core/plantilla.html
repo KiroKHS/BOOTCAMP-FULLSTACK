@@ -1,0 +1,96 @@
+{% load static %}
+{% load humanize %}
+{{ floatvalue|floatformat:2|intcomma }}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda de intrumentos</title>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}" class="css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <div id="izquierda">
+          <a href = "{% url 'home' %}">
+            <img src="{% static 'core/img/logo.png' %}" alt="logo" class="logo" />
+          </a>
+          <p>La Juancha</p>
+          <input type="text" placeholder="¿que buscas?" />
+        </div>
+        <div id="derecha">
+          <div class="ingresar">
+            <img src="{% static 'core/img/usuario.png' %}" alt="" />
+            {% if  user.is_authenticated %}
+            <strong>{{user.username}}</strong>
+            <a href="{% url 'logout'%}"> Salir</a>
+            {% else %}
+            <a href="{% url 'login'%}"> ingresar</a>            
+            {% endif %}
+          </div>
+          <div class="ingresar">
+            <img src="{% static 'core/img/wirshlist.png' %}" alt="" />
+            <a>Wishlist</a>
+          </div>
+          <div class="ingresar">
+            <img src="{% static 'core/img/carrito.png' %}" alt="" />
+            <a>Carrito</a>
+          </div>
+        </div>
+      </div>
+      <nav id="menu-header">
+        <div class="menu-item">
+          <img src="{% static 'core/img/bunger.png' %}" alt="" />
+          <p>categorias</p>
+        </div>
+        <div class="menu-item">
+          <img src="{% static 'core/img/rayo.png' %}" alt="" />
+          <p>nuevos</p>
+        </div>
+        <div class="menu-item">
+          <img src="{% static 'core/img/star.png' %}" alt="" />
+          <p>ofertas</p>
+        </div>
+        <div class="menu-item">
+          <img src="{% static 'core/img/gps.png' %}" alt="" />
+          <p>tiendas</p>
+        </div>
+      </nav>
+    </header>
+   
+{% block contenido %}
+{% endblock %}
+<footer>
+  <div>
+    <h1>Servicio al cliente</h1>
+    <a href="#">iniciar Sesión</a>
+    <a href="#">metodo de pago</a>
+    <a href="#">despacho domicilio</a>
+    <a href="#">terminos y condiciones</a>
+    <a href="#">promociones vigentes</a>
+  </div>
+  <div>
+    <h1>Servicio al cliente</h1>
+    <a href="#">iniciar Sesión</a>
+    <a href="#">metodo de pago</a>
+    <a href="#">despacho domicilio</a>
+    <a href="#">terminos y condiciones</a>
+    <a href="#">promociones vigentes</a>
+  </div>
+</footer>
+</body>
+</html>
