@@ -16,3 +16,9 @@ inspiracion de [casa amarilla](https://www.casamarilla.cl/)
 ## poner español
 
 line **107** a **setting.py** colocar **es**
+
+## importacion nesesaria
+ `sh
+ pip install django-crispy-forms
+ pip install pillow
+ `

@@ -1,0 +1,9 @@
+{% extends 'core/plantilla.html' %}
+{% block contenido %}
+{% load crispy_forms_tags %}
+<div class="container">
+<h1>Has cerrado Sesion</h1>
+<a href="{% url 'home' %}">Pagina principal</a> <br>
+<a href="{% url 'login' %}">iniciar sesion</a>
+</div>
+{% endblock %}

@@ -4,8 +4,15 @@
   padding: 0;
   margin: 0;
 }
-
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 header{
+  display:flex;
+  flex-direction: column;
   position: sticky;
   top: 0;
 }
@@ -17,6 +24,7 @@ header,header > div {
   background-color: #000000;
   align-items: center;
   height: 90px;
+  min-width: 100%;
 }
 #izquierda {
   width: 80%;
@@ -25,6 +33,11 @@ header,header > div {
   justify-content: space-around;
   padding-right: 200px;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+#izquierda, #derecha{
+  display:flex;
+  align-items: center;
 }
 
 #derecha {
@@ -36,16 +49,25 @@ input {
   width: 47%;
   height: 2.5rem;
   border-radius: 15px;
+  font-size: 1rem;
 }
-
-#izquierda > img {
-  width: 60px;
-
+h3{
+  font-size: 1rem;
+}
+.container{
+  margin: 80px 0px 80px 0px;
+}
+#izquierda >a> img {
+  width: 65px;
 }
 #derecha > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.ingresar > a{
+  text-decoration: none;
+  color: #ffffff;
 }
 #derecha > div > img {
   width: 30px;
@@ -59,7 +81,11 @@ input {
   color: #ffffff;
   background-color: #000000;
   padding-right: 60vw;
-  height: 50px;
+  width: 100%;
+}
+.menu-iteam>p{
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .menu-item:hover {
   background-color: #f0f0f0bf;
@@ -74,10 +100,12 @@ input {
   justify-content: center;
   transition-duration: 0.5s;
   cursor: pointer;
+  height: 50px;
 }
+
 .menu-item > p {
-  padding-left: 5px;
-  padding-right: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .menu-item > img {
@@ -137,12 +165,14 @@ input {
   flex-direction: column;
   align-items: center;
   padding: 20px 10px 20px 10px;
-  border: 4px #7B7B7B;
+  border: solid 1px #7B7B7B;
+  margin-bottom: 10px;
 }
-#titulo-calatogo{
+#titulo-catalogo{
   font-family: 'lobster', cursive;
   padding: 20px 0px;
   font-size: 2rem;
+  text-align: center;
 }
 .producto>button{
   background-color: #F3C524;
