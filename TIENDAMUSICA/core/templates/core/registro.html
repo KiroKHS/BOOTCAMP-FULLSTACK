@@ -1,11 +1,16 @@
 {% extends 'core/plantilla.html' %}
 {% block contenido %}
 {% load crispy_forms_tags %}
-<div class="container">
+<div class="formulario">
   <form action="" method="post">
-    {% csrf_token %}
-    {{form|crispy}}
-    <button type="submit" class = "btn btn-success">Enviar</button>
-  </form>
+    <div class="mb-3">
+      {% csrf_token %}
+      {{form|crispy}}
+    </div>
+    <div class="d-grid gap-2">
+      <button type="reset" class="btn btn-danger">Limpiar</button>
+      <button type="submit" class = "btn btn-success">Enviar</button>
+      <a href="{% url 'registro' %}">¿no tiene una cuenta?</a>
+  </div>
 </div>
 {% endblock %}
