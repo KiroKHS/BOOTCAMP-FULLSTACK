@@ -1,12 +1,14 @@
 from django.shortcuts import redirect, render
 from .models import ListaDeseos, Producto
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
   productos = Producto.objects.all()
   return render(request, 'core/index.html', {'productos': productos})
 
+@login_required(login_url='login')
 def wishlist(request):
   productos = ListaDeseos.objects.filter(usuario=request.user)
   return render(request, 'core/wishlist.html', {'productos': productos})
