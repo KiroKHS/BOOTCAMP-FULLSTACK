@@ -48,3 +48,10 @@ def agregarALista(request, id):
     lista.save()
     datos["msg"] = 'Agregado a lista de deseos!.'
     return render(request, 'core/index.html', datos )
+
+def getResultados(request):
+  filtro = request.GET.get('filtro')
+  productos = Producto.objects.filter(nombre=filtro)
+  datos = {}
+  datos['productos'] = productos
+  return render(request, 'core/index.html', datos )

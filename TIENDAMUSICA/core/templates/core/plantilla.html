@@ -30,7 +30,9 @@
             <img src="{% static 'core/img/logo.png' %}" alt="logo" class="logo" />
           </a>
           <p>La Juancha</p>
-          <input type="text" placeholder="¿que buscas?" />
+          <form action='{% url "filtrar" %}'>
+            <input type="text" name="filtro" placeholder="¿que buscas?" />
+          </form>
         </div>
         <div id="derecha">
           <div class="ingresar">
