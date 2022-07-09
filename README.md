@@ -21,6 +21,7 @@ line **107** a **setting.py** colocar **es**
  `sh
  pip install django-crispy-forms
  pip install pillow
+ pip install djangorestframework
  `
 
 # para instalar en oracle
