@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'django.contrib.humanize', #agregar un 'toque humano' a los datos ejempl 1000 -> 1,000
-    'crispy_forms'
+    'crispy_forms',
+    'rest_productos',
+    'rest_framework',
 ]
 
 
