@@ -1,4 +1,6 @@
 from django.db import models
+#llamando datos del modelo usuario
+from django.contrib.auth.models import User
 
 #data table Categoria 
 class Categoria(models.Model):
@@ -14,3 +16,11 @@ class Producto(models.Model):
   cateogria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
   def __str__(self) -> str:
       return self.nombre
+
+# data table Lista deseos
+class ListaDeseos(models.Model):
+  usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+  producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+
+  def __str__(self) -> str:
+      return self.usuario.username+ " "+self.producto.nombre
