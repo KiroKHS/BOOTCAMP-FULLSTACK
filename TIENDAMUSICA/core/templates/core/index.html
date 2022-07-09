@@ -29,6 +29,16 @@
       </section>
       <h1 id="titulo-catalogo">Catalagos productos</h1>
       <section>
+        {% if msg %}
+        <div class="alert alert-success" role="alert">
+        {{msg}}
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+        {{error}}
+        </div>
+        {% endif %}
         <div id="productos">
           {% for iteam in productos%}
             <div class="producto">
@@ -37,6 +47,9 @@
               <p>{{iteam.descripcion}}</p>
               <h3>&dollar;{{iteam.precio  | intcomma }}</h3>
               <button>Agregar al carro</button>
+              {% if user.is_authenticated %}
+              <a href="{% url 'addTOList' iteam.id %}"> añadir a lista de deseos</a>
+              {% endif %}
             </div>
           {% endfor %}
         </div>
