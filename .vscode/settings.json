@@ -4,9 +4,9 @@
   "git.confirmSync": false,
   "tabnine.experimentalAutoImports": true,
   // Ajustes de terminal
-  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-  "terminal.integrated.fontSize": 11,
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  //"terminal.integrated.fontFamily": "console",
+  "terminal.integrated.fontSize": 14,
+  //"terminal.integrated.defaultProfile.windows": "PowerShell",
   // ajustes de VSCODE
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
@@ -24,5 +24,10 @@
   },
   "[css]": {
       "editor.defaultFormatter": "mblode.pretty-formatter"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#1A3415",
+    "titleBar.activeBackground": "#24481E",
+    "titleBar.activeForeground": "#F7FCF7"
   },
 }
