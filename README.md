@@ -22,3 +22,26 @@ line **107** a **setting.py** colocar **es**
  pip install django-crispy-forms
  pip install pillow
  `
+
+# para instalar en oracle
+
+`pip install cx_oracle`
+
+## primer paso
+creas un usuario y una base de datos
+
+## ejemplo 
+`
+'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'host': 'localhost',
+        'NAME': 'xe',
+        'USER': 'django',
+        'PASSWORD': 'django',
+        'PORT': '1521',
+    }
+`
+
+# datos de moledos
+
+al generar un modelo sin una clave prymary key se crea una primary key id
