@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from .models import ListaDeseos, Producto
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 # Create your views here.
 
 def home(request):
@@ -51,7 +52,10 @@ def agregarALista(request, id):
 
 def getResultados(request):
   filtro = request.GET.get('filtro')
-  productos = Producto.objects.filter(nombre=filtro)
+  productos = Producto.objects.filter(Q(nombre__contains=filtro) | Q(cateogria__nombreCategoria__contains=filtro) )
   datos = {}
-  datos['productos'] = productos
+  if len(productos) !=0:
+    datos['productos'] = productos  
+  else:
+    datos["error"] = 'Sin Resultado.'
   return render(request, 'core/index.html', datos )
