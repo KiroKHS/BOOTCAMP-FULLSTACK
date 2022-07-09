@@ -1,0 +1,31 @@
+{% extends 'core/plantilla.html' %}
+{% load static %}
+{% load humanize %}
+{% block contenido %}
+<div class="container">
+    <article>
+      <h1 id="titulo-catalogo">Productos en la lista de deseos</h1>
+      <section>
+        {% if msg %}
+        <div class="alert alert-success" role="alert">
+        {{msg}}
+        </div>
+        {% endif %}
+        <div id="productos">
+          {% for iteam in productos%}
+            <div class="producto">
+              <img src="{{ iteam.producto.imagen.url }}" alt="{{ iteam.producto.cateogria}}" />
+              <h3>{{iteam.producto.nombre}}</h3>
+              <p>{{iteam.producto.descripcion}}</p>
+              <h3>&dollar;{{iteam.producto.precio  | intcomma }}</h3>
+              <button>Agregar al carro</button>
+              {% if user.is_authenticated %}
+              <a href="{% url 'deleteTOList' iteam.producto.id %}">Quitar de lista de deseos</a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </article>
+  </div>
+    {% endblock contenido %}
