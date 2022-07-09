@@ -35,6 +35,15 @@ header,header > div {
   padding-right: 200px;
   font-family: 'Source Sans Pro', sans-serif;
 }
+#izquierda > p{
+  margin: auto;
+}
+#izquierda > form{
+  margin: 0px;
+}
+#izquierda > form>input{
+  width :auto;
+}
 
 #izquierda, #derecha{
   display:flex;
@@ -251,7 +260,7 @@ form{
 /* RESPONSIVE */
 
 @media (max-width:960px){
-  input{
+  #izquierda>form{
     display: none;
 
   }
