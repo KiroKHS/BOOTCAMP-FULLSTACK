@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import ListaDeseos, Producto
+from .models import Carrito, ListaDeseos, Producto
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -50,6 +50,7 @@ def agregarALista(request, id):
     datos["msg"] = 'Agregado a lista de deseos!.'
     return render(request, 'core/index.html', datos )
 
+
 def getResultados(request):
   filtro = request.GET.get('filtro')
   productos = Producto.objects.filter(Q(nombre__contains=filtro) | Q(cateogria__nombreCategoria__contains=filtro) )
@@ -59,3 +60,19 @@ def getResultados(request):
   else:
     datos["error"] = 'Sin Resultado.'
   return render(request, 'core/index.html', datos )
+
+def agregarACarrito(request, id):
+  datos = {}
+  #capturando datos del producto por id
+  producto = Producto.objects.get(id=id)
+  usuario = request.user
+  datos['productos'] = Producto.objects.all()
+  try:
+    Carrito.objects.get(producto=producto, usuario=usuario)
+    datos["error"] = "producto ya se encuentra Carrito"
+    return render(request, 'core/index.html', datos )
+  except Carrito.DoesNotExist:
+    carro = Carrito(usuario=usuario, producto=producto)
+    carro.save()
+    datos["msg"] = 'Agregado a lista de deseos!.'
+    return render(request, 'core/index.html', datos )

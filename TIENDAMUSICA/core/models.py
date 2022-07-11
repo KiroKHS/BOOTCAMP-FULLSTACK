@@ -24,3 +24,10 @@ class ListaDeseos(models.Model):
 
   def __str__(self) -> str:
       return self.usuario.username+ " "+self.producto.nombre
+
+class Carrito(models.Model):
+  usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+  producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+  
+  def __str__(self) -> str:
+     return f"{self.usuario.username} [{self.producto.nombre}] ${self.producto.precio}"
